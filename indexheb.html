@@ -1,248 +1,154 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl" >
+<html dir="rtl">
 <head>
-  <meta charset="UTF-8">
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bachelor's degree qualification</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'><link rel="stylesheet" href="./style.css">
-
-	<link href="stackedCards.css" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<link href="highlight.css" rel="stylesheet">
-
-	<script src="https://cdn.jsdelivr.net/highlight.js/9.9.0/highlight.min.js"></script>
-	<script>hljs.initHighlightingOnLoad();</script>
-
-
-	<style>
-		*, *:before, *:after {
-			box-sizing: border-box;
-		}
-		body {
-			color: #444;
-		}
-		html {
-			height: 100%;
-		}
-		body {
-			font-family: "Roboto", sans-serif;
-			width:  100%;
-			height: 100%;
-			min-height: 100%;
-			margin: 0px;
-			padding: 0px;
-			background-color: #eee;
-			background-color: #fff;
-		}
-
-		.stacked-cards h2 {
-			text-align: center;
-			position: relative;
-			top: -20px;
-		}
-
-		.intro {
-			max-width: 600px;
-			margin: 20px auto;
-			text-align: center;
-		}
-
-		.container-fuild {
-			max-width: 80%;
-			margin: 0 auto;
-		}
-
-		.container-fixed {
-			max-width: 767px;
-			margin: 0 auto;
-		}
-
-		.divider {
-			max-width: 500px;
-			margin: 25px auto;
-			background-color: #ccc;
-			height: 2px;
-			width: 100%;
-		}
-
-		.stacked-cards {
-			padding-top: 00px;
-			padding-bottom: 15px;
-		}
-
-		.stacked-cards-fanOut {
-			padding-bottom: 40px;
-		}
-
-		.stacked-cards-fanOut li img {
-			max-height: 100vh;
-		}
-
-		.stacked-cards li {
-			height: 387px;
-		}
-
-    @media (max-width: 767px) {
-			.stacked-cards li {
-				height: 25vw;
-        padding: 00vw;
-			}
-		}
-
-		.stacked-cards li {
-			background-color: #00bcd4;
-		}
-
-		.stacked-cards li:nth-child(n) {
-			background-color: #3599db;
-		}
-
-		.stacked-cards li:nth-child(2n) {
-			background-color: #e61b77;
-		}
-
-		.stacked-cards li:nth-child(3n) {
-			background-color: #00bcd4;
-		}
-
-		.stacked-cards li:nth-child(4n) {
-			background-color: #f4b251;
-		}
-
-		.stacked-cards li:nth-child(5n) {
-			background-color: #8e4497;
-		}
-
-		.source {
-			margin: 25px auto;
-		}
-
-		.header {
-			margin: 0px auto;
-			padding: 25px 5px;
-			background-color: #fff;
-		}
-		.header img {
-			display: block;
-			margin: 0 auto;
-			max-width: 300px;
-			height: auto;
-		}
-
-
-	</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
+    <link rel="stylesheet" href="cards-gallery.css">
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<!-- Student Profile -->
-<div class="student-profile py-4">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4"><a href="index.html"<button class="button-18" role="button">English</button></a>
-        <div class="card shadow-sm">
-          <div class="card-header bg-transparent text-center">
-            <img class="profile_img" src=img\1648344009789.jpg alt="">
-            <h3>רואי רדלר</h3>
-          </div>
-          <div class="card-body" style= "text-align: right !important;">
-            <p class="mb-0" ><strong class="pr-1">ת.ז סטודנט:</strong>&nbsp;3******31</p>
-            <p class="mb-0"><strong class="pr-1">מחלקה:</strong>&nbsp;220113003</p>
-            <p class="mb-0"><strong class="pr-1">סטטוס:</strong>&nbsp;זכאי לתואר <img class="Certificate_img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/2048px-Eo_circle_green_checkmark.svg.png" style="width: 4%;"></p>
-            <p class="mb-0"><strong class="pr-1">תאריך תחילת הזכאות:</strong>&nbsp;15/12/2022</p>
-            <p class="mb-0"><strong class="pr-1">תאריך פקיעת הזכאות:</strong>&nbsp;אין</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-8" style= "text-align: right !important;">
-        <div class="card shadow-sm">
-          <div class="card-header bg-transparent border-0">
-            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>מידע כללי</h3>
-          </div>
-          <div class="card-body pt-0">
-            <table class="table table-bordered">
-              <tr>
-                <th width="30%">הכשרה אקדמאית</th>
-                <td width="2%">:</td>
-                <td>B.A</td>
-              </tr>
+<div class="card-container">
+	<a href="index.html"><span class="pro">English</span></a>
 
-              <tr>
-                <th width="30%">נושא</th>
-                <td width="2%">:</td>
-                <td>מנהל עסקים בהתמחות מערכות מידע</td>
-              </tr>
-              <tr>
-                <th width="30%">שנים אקדמיות	</th>
-                <td width="2%">:</td>
-                <td>2019-2022</td>
-              </tr>
-              <tr>
-                <th width="30%">מוסד אקדמי</th>
-                <td width="2%">:</td>
-                <td><img class="Certificate_img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Ono_Academic_College.png/338px-Ono_Academic_College.png" style="width: 25%;">הקריה האקדמית אונו</td>
-              </tr>
+	<img class="round" src="img\1648344009789.jpg" alt="user" />
+	<h3>רואי רדלר</h3>
+	
+<table style="border-collapse: collapse; margin: 0 auto; max-width: 100%; width: 500px;">
+  <tr>
+    <td style="border: 1px solid #fff; padding: 10px;"><strong>ת.ז סטודנט:</strong></td>
+    <td style="border: 1px solid #fff; padding: 10px;"> 13******3</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #fff; padding: 10px;"><strong>מחלקה:</strong></td>
+    <td style="border: 1px solid #fff; padding: 10px;">220113003</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #fff; padding: 10px;"><strong>סטטוס:</strong></td>
+    <td style="border: 1px solid #fff; padding: 10px;">זכאי לתואר <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/2048px-Eo_circle_green_checkmark.svg.png" style="width: 4%;"></td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #fff; padding: 10px;"><strong>תאריך תחילת הזכאות:</strong></td>
+    <td style="border: 1px solid #fff; padding: 10px;">15/12/2022</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid #fff; padding: 10px;"><strong>תאריך פקיעת הזכאות:</strong></td>
+    <td style="border: 1px solid #fff; padding: 10px;">אין</td>
+  </tr>
+</table>
+<br>
 
-              <tr>
-                <th width="30%">ציון</th>
-                <td width="2%">:</td>
-                <td>87</td>
-              </tr>
-            </table>
-            <center>
-            <div class="divider"></div>
+	<!--<div class="buttons">
+		<button class="primary">
+			Message
+		</button>
+		<button class="primary ghost">
+			Following
+		</button>
+	</div>-->
+<div id="idLinkedInIcon" onclick="window.open('https://www.linkedin.com/in/roei-redler/');" title="Roei Redler Linkedin">in</div></div><br>
+<!-- This is a comment in HTML -->
 
-            		<div class="container-fixed stacked-cards stacked-cards-fanOut">
-<p>
-החלק בין התמונות <img class="Certificate_img" src="https://icon-library.com/images/swipe-icon-png/swipe-icon-png-16.jpg" style="width: 9%;"></p>
-<ul>
-  <li>
-    <a href=""><img class="Certificate_img" src="https://i.pinimg.com/736x/d1/81/65/d1816583616f36b2f4486ce18ae2b226.jpg" alt=""></a>
-  </li>
-  <li>
-    <a href=img\1671134101137.png><img class="Certificate_img" src=img\1671134101137.png alt=""></a>
-  </li>
-  <li>
-    <a href=""><img class="Certificate_img" src="https://i.pinimg.com/736x/d1/81/65/d1816583616f36b2f4486ce18ae2b226.jpg" alt=""></a>
-  </li>
-            			</ul>
-            		</div>
-                </div>
-          </div>
-        </div>
-        </center>
+<div class="card-container2">
+
+
+<table style="border-collapse: collapse; width: 100%; max-width: 800px; margin: 0 auto; border: 0px solid #ddd;">
+  <tr>
+    <th style="width: 30%; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; padding: 10px;">הכשרה אקדמאית</th>
+    <td style="width: 2%; border-bottom: 1px solid #ddd; padding: 10px;">:</td>
+    <td style="border-bottom: 1px solid #ddd; padding: 10px;">B.A</td>
+  </tr>
+  <tr>
+    <th style="width: 30%; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; padding: 10px;">נושא</th>
+    <td style="width: 2%; border-bottom: 1px solid #ddd; padding: 10px;">:</td>
+    <td style="border-bottom: 1px solid #ddd; padding: 10px;">מנהל עסקים בהתמחות מערכות מידע
+</td>
+  </tr>
+  <tr>
+    <th style="width: 30%; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; padding: 10px;">שנים אקדמיות</th>
+    <td style="width: 2%; border-bottom: 1px solid #ddd; padding: 10px;">:</td>
+    <td style="border-bottom: 1px solid #ddd; padding: 10px;">2019-2022</td>
+  </tr>
+  <tr>
+    <th style="width: 30%; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; padding: 10px;">מוסד אקדמי</th>
+    <td style="width: 2%; border-bottom: 1px solid #ddd; padding: 10px;">:</td>
+    <td style="border-bottom: 1px solid #ddd; padding: 10px;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Ono_Academic_College.png/338px-Ono_Academic_College.png" style="width: 25%; vertical-align: middle; margin-right: 10px;">הקריה האקדמית אונו</td>
+  </tr>
+  <tr>
+    <th style="width: 30%; border-right: 1px solid #ddd; padding: 10px;">ציון</th>
+    <td style="width: 2%; border-bottom: 0px solid #ddd; padding: 10px;">:</td>
+    <td style="border-bottom: 0px solid #ddd; padding: 10px;">87</td>
+  </tr>
+</table>
 
 
 
-      </div>
-    </div>
-  </div>
+<br>
+
+
+	
 </div>
-<!-- HTML !-->
+<!-- This is a comment in HTML -->
 
-    <script src="stackedCards.min.js"></script>
+   <section class="gallery-block cards-gallery">
+	    <div class="container">
+	        <div class="heading">
+	          <h2>תעודות אקדמיות</h2>
+	        </div>
+	        <div class="row">
+	            <div class="col-md-6 col-lg-4">
+	                <div class="card border-0 transform-on-hover">
+	                	<a class="lightbox" href="img\1671134101137.png">
+	                		<img src="img\113.png" alt="Card Image" class="card-img-top">
+	                	</a>
+	                    <div class="card-body">
+	                        <h6><a href="#">אישור זכאות לתואר</a></h6>
+	                        <p class="text-muted card-text">מסמך רשמי המאשר כי סטודנט עמד בכל הדרישות הנדרשות לקבלת תואר אקדמי ספציפי מאוניברסיטה או מכללה.</p>
+	                    </div>
+	                </div>
+	            </div>
+	           <div class="col-md-6 col-lg-4">
+	                <div class="card border-0 transform-on-hover">
+	                	<a class="lightbox" href="https://assets-global.website-files.com/5e5d43546b94f97f39c228fa/630ee051163c47de209f2f10_How_to_Write_an_Academic_Essay_.png">
+	                		<img src="https://assets-global.website-files.com/5e5d43546b94f97f39c228fa/630ee051163c47de209f2f10_How_to_Write_an_Academic_Essay_.png" alt="Card Image" class="card-img-top">
+	                	</a>
+	                    <div class="card-body">
+	                        <h6><a href="#">Lorem Ipsum</a></h6>
+	                        <p class="text-muted card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.</p>
+	                    </div>
+	                </div>
+	            </div>
+	           <div class="col-md-6 col-lg-4">
+	                <div class="card border-0 transform-on-hover">
+	                	<a class="lightbox" href="https://assets-global.website-files.com/5e5d43546b94f97f39c228fa/630ee051163c47de209f2f10_How_to_Write_an_Academic_Essay_.png">
+	                		<img src="https://assets-global.website-files.com/5e5d43546b94f97f39c228fa/630ee051163c47de209f2f10_How_to_Write_an_Academic_Essay_.png" alt="Card Image" class="card-img-top">
+	                	</a>
+	                    <div class="card-body">
+	                        <h6><a href="#">Lorem Ipsum</a></h6>
+	                        <p class="text-muted card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.</p>
+	                    </div>
+	                </div>
+	            </div>
+				<div class="col-md-6 col-lg-4">
+	                <div class="card border-0 transform-on-hover">
+	                	<a class="lightbox" href="https://assets-global.website-files.com/5e5d43546b94f97f39c228fa/630ee051163c47de209f2f10_How_to_Write_an_Academic_Essay_.png">
+	                		<img src="https://assets-global.website-files.com/5e5d43546b94f97f39c228fa/630ee051163c47de209f2f10_How_to_Write_an_Academic_Essay_.png" alt="Card Image" class="card-img-top">
+	                	</a>
+	                    <div class="card-body">
+	                        <h6><a href="#">Lorem Ipsum</a></h6>
+	                        <p class="text-muted card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.</p>
+	                    </div>
+	                </div>
+	            </div>
 
-  	<script>
-  		var stackedCardSlide = new stackedCards({
-  		 	selector: '.stacked-cards-slide',
-  		 	layout: "slide",
-  		 	transformOrigin: "center",
-  		 });
-
-  		stackedCardSlide.init();
-
-  		var stackedCardFanOut = new stackedCards({
-  		 	selector: '.stacked-cards-fanOut',
-  		 	layout: "fanOut",
-  		 	transformOrigin: "bottom",
-  		 });
-
-  		stackedCardFanOut.init();
-  	</script>
-
-
-<!-- partial -->
-
+	        </div>
+	    </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script>
+        baguetteBox.run('.cards-gallery', { animation: 'slideIn'});
+    </script>
 </body>
 </html>
