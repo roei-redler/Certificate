@@ -2,172 +2,383 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Bachelor's degree qualification</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
-	<link rel="stylesheet" href="cards-gallery.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bachelor's degree qualification</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <style>
+        /* Custom styles for the image viewer */
+        .image-viewer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+        }
+
+        .image-viewer img {
+            max-width: 90%;
+            max-height: 90vh;
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            color: black;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: bold;
+            z-index: 1001;
+        }
+    </style>
 </head>
 
-<body>
-	<div class="card-container">
-		<a href="indexheb.html"><span class="pro">עברית</span></a>
+<body class="bg-[#28223F] font-['Montserrat'] flex items-center justify-center flex-col min-h-screen m-0">
+    <!-- Image Viewer -->
+    <div id="imageViewer" class="image-viewer">
+        <div class="close-btn" onclick="closeImageViewer()">×</div>
+        <img id="viewerImage" src="" alt="Enlarged image">
+    </div>
+    <!-- English Version -->
+    <div id="english-version" class="w-full px-4 sm:px-6 lg:px-8">
+        <div
+            class="bg-[#231E39] rounded-lg shadow-xl text-[#B3B8CD] pt-8 relative w-full max-w-[450px] text-center mb-4 mx-auto">
+            <a href="#" onclick="toggleLanguage()"
+                class="bg-[#FEBB0B] text-[#231E39] rounded px-2 py-1 text-sm font-bold absolute top-8 left-8">עברית</a>
 
-		<img class="round" src="img\1648344009789.jpg" alt="user" />
-		<h3>Roei Redler</h3>
+            <img class="border border-[#03BFCB] rounded-full p-2 w-48 sm:w-64 mx-auto" src="img\1648344009789.jpg"
+                alt="user" />
+            <h3 class="my-3 text-lg sm:text-xl">Roei Redler</h3>
 
-		<table style="border-collapse: collapse; margin: 0 auto; max-width: 100%; width: 500px;">
-			<tr>
-				<td style="border: 1px solid #fff; padding: 10px;"><strong>Student ID:</strong></td>
-				<td style="border: 1px solid #fff; padding: 10px;">3******13</td>
-			</tr>
-			<tr>
-				<td style="border: 1px solid #fff; padding: 10px;"><strong>Class:</strong></td>
-				<td style="border: 1px solid #fff; padding: 10px;">220113003</td>
-			</tr>
-			<tr>
-				<td style="border: 1px solid #fff; padding: 10px;"><strong>Status:</strong></td>
-				<td style="border: 1px solid #fff; padding: 10px;">Successfully graduated <img
-						src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/2048px-Eo_circle_green_checkmark.svg.png"
-						style="width: 4%;"></td>
-			</tr>
-			<tr>
-				<td style="border: 1px solid #fff; padding: 10px;"><strong>Eligibility start date:</strong></td>
-				<td style="border: 1px solid #fff; padding: 10px;">15/12/2022</td>
-			</tr>
-			<tr>
-				<td style="border: 1px solid #fff; padding: 10px;"><strong>Eligibility expiration date:</strong></td>
-				<td style="border: 1px solid #fff; padding: 10px;">None</td>
-			</tr>
-		</table>
-		<br>
+            <table class="border-collapse mx-auto max-w-full w-[500px]">
+                <tr>
+                    <td class="border border-transparent p-3"><strong>Student ID:</strong></td>
+                    <td class="border border-transparent p-3">3******13</td>
+                </tr>
+                <tr>
+                    <td class="border border-transparent p-3"><strong>Class:</strong></td>
+                    <td class="border border-transparent p-3">220113003</td>
+                </tr>
+                <tr>
+                    <td class="border border-transparent p-3"><strong>Status:</strong></td>
+                    <td class="border border-transparent p-3">
+                        Successfully graduated
+                        <img class="inline w-[4%]"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/2048px-Eo_circle_green_checkmark.svg.png">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border border-transparent p-3"><strong>Eligibility start date:</strong></td>
+                    <td class="border border-transparent p-3">15/12/2022</td>
+                </tr>
+                <tr>
+                    <td class="border border-transparent p-3"><strong>Eligibility expiration date:</strong></td>
+                    <td class="border border-transparent p-3">None</td>
+                </tr>
+            </table>
+            <div class="mt-4 mb-4">
+                <div id="idLinkedInIcon"
+                    class="bg-[#0066AA] hover:bg-[#0066dd] rounded-md text-white cursor-pointer inline-block font-bold text-4xl h-10 w-10 mt-px text-center"
+                    onclick="window.open('https://www.linkedin.com/in/roei-redler/');" title="Roei Redler Linkedin">in
+                </div>
+            </div>
+        </div>
 
-		<!--<div class="buttons">
-		<button class="primary">
-			Message
-		</button>
-		<button class="primary ghost">
-			Following
-		</button>
-	</div>-->
-		<div id="idLinkedInIcon" onclick="window.open('https://www.linkedin.com/in/roei-redler/');"
-			title="Roei Redler Linkedin">in</div>
-	</div><br>
-	<!-- This is a comment in HTML -->
+        <div
+            class="bg-opacity-40 bg-[#474ba0] rounded-lg shadow-xl text-[#B3B8CD] pt-8 relative w-full max-w-[450px] text-center mb-4 mx-auto p-4">
+            <table class="border-collapse w-full max-w-[800px] mx-auto border-0">
+                <tr>
+                    <th class="w-[30%] border-r border-b border-[#ddd] p-3">Academic Qualification</th>
+                    <td class="w-[2%] border-b border-[#ddd] p-3">:</td>
+                    <td class="border-b border-[#ddd] p-3">B.A</td>
+                </tr>
+                <tr>
+                    <th class="w-[30%] border-r border-b border-[#ddd] p-3">Title</th>
+                    <td class="w-[2%] border-b border-[#ddd] p-3">:</td>
+                    <td class="border-b border-[#ddd] p-3">Business administration in information systems</td>
+                </tr>
+                <tr>
+                    <th class="w-[30%] border-r border-b border-[#ddd] p-3">Academic Years</th>
+                    <td class="w-[2%] border-b border-[#ddd] p-3">:</td>
+                    <td class="border-b border-[#ddd] p-3">2019-2022</td>
+                </tr>
+                <tr>
+                    <th class="w-[30%] border-r border-b border-[#ddd] p-3">Academic institution</th>
+                    <td class="w-[2%] border-b border-[#ddd] p-3">:</td>
+                    <td class="border-b border-[#ddd] p-3">
+                        <img class="w-1/4 align-middle mr-3 inline"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Ono_Academic_College.png/338px-Ono_Academic_College.png">
+                        Ono Academic College
+                    </td>
+                </tr>
+                <tr>
+                    <th class="w-[30%] border-r p-3">Grade</th>
+                    <td class="w-[2%] p-3">:</td>
+                    <td class="p-3">87</td>
+                </tr>
+            </table>
+        </div>
 
-	<div class="card-container2">
+        <section class="py-8 sm:py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-8 sm:mb-12">
+                    <h2 class="font-bold text-lg sm:text-xl text-[#aab3bc]">Academic Certificates</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Certificate 1 -->
+                    <div
+                        class="card border-0 transform hover:translate-y-[-10px] hover:scale-102 hover:shadow-lg transition duration-400">
+                        <img src="img\113.png" alt="Card Image" class="card-img-top shadow cursor-pointer"
+                            onclick="openImageViewer('img\\1671134101137.png')">
+                        <div class="card-body text-center">
+                            <h6 class="text-base font-bold"><a href="#"
+                                    class="text-[#212529] hover:no-underline">Bachelor's Degree Qualification</a></h6>
+                            <p class="text-muted text-sm">Official document that certifies that a student has met all
+                                requirements.</p>
+                        </div>
+                    </div>
 
+                    <!-- Certificate 2 -->
+                    <div
+                        class="card border-0 transform hover:translate-y-[-10px] hover:scale-102 hover:shadow-lg transition duration-400">
+                        <img src="img\6.jpg" alt="Card Image" class="card-img-top shadow cursor-pointer"
+                            onclick="openImageViewer('img\\Scan2023-06-05_183206.jpg')">
+                        <div class="card-body text-center">
+                            <h6 class="text-base font-bold"><a href="#"
+                                    class="text-[#212529] hover:no-underline">Bachelor's degree</a></h6>
+                            <p class="text-muted text-sm">An official certificate awarded at the end of the study period
+                                at an academic institution</p>
+                        </div>
+                    </div>
 
-		<table
-			style="border-collapse: collapse; width: 100%; max-width: 800px; margin: 0 auto; border: 0px solid #ddd;">
-			<tr>
-				<th style="width: 30%; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; padding: 10px;">
-					Academic Qualification</th>
-				<td style="width: 2%; border-bottom: 1px solid #ddd; padding: 10px;">:</td>
-				<td style="border-bottom: 1px solid #ddd; padding: 10px;">B.A</td>
-			</tr>
-			<tr>
-				<th style="width: 30%; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; padding: 10px;">
-					Title</th>
-				<td style="width: 2%; border-bottom: 1px solid #ddd; padding: 10px;">:</td>
-				<td style="border-bottom: 1px solid #ddd; padding: 10px;">Business administration in information systems
-				</td>
-			</tr>
-			<tr>
-				<th style="width: 30%; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; padding: 10px;">
-					Academic Years</th>
-				<td style="width: 2%; border-bottom: 1px solid #ddd; padding: 10px;">:</td>
-				<td style="border-bottom: 1px solid #ddd; padding: 10px;">2019-2022</td>
-			</tr>
-			<tr>
-				<th style="width: 30%; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; padding: 10px;">
-					Academic institution</th>
-				<td style="width: 2%; border-bottom: 1px solid #ddd; padding: 10px;">:</td>
-				<td style="border-bottom: 1px solid #ddd; padding: 10px;"><img
-						src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Ono_Academic_College.png/338px-Ono_Academic_College.png"
-						style="width: 25%; vertical-align: middle; margin-right: 10px;">Ono Academic College</td>
-			</tr>
-			<tr>
-				<th style="width: 30%; border-right: 1px solid #ddd; padding: 10px;">Grade</th>
-				<td style="width: 2%; border-bottom: 0px solid #ddd; padding: 10px;">:</td>
-				<td style="border-bottom: 0px solid #ddd; padding: 10px;">87</td>
-			</tr>
-		</table>
+                    <!-- Certificate 3 -->
+                    <div
+                        class="card border-0 transform hover:translate-y-[-10px] hover:scale-102 hover:shadow-lg transition duration-400">
+                        <img src="img\8.jpg" alt="Card Image" class="card-img-top shadow cursor-pointer"
+                            onclick="openImageViewer('img\\Scan2023-06-05_183911.jpg')">
+                        <div class="card-body text-center">
+                            <h6 class="text-base font-bold"><a href="#"
+                                    class="text-[#212529] hover:no-underline">Systems analyst certificate</a></h6>
+                            <p class="text-muted text-sm">A certificate attesting to the official approval of the Bureau
+                                of Systems Analysts in Israel as certified in information systems analysis</p>
+                        </div>
+                    </div>
 
+                    <!-- Certificate 4 -->
+                    <div
+                        class="card border-0 transform hover:translate-y-[-10px] hover:scale-102 hover:shadow-lg transition duration-400">
+                        <img src="img\7.jpg" alt="Card Image" class="card-img-top shadow cursor-pointer"
+                            onclick="openImageViewer('img\\Scan2023-06-05_183542.jpg')">
+                        <div class="card-body text-center">
+                            <h6 class="text-base font-bold"><a href="#" class="text-[#212529] hover:no-underline">SAP
+                                    certification</a></h6>
+                            <p class="text-muted text-sm">SAP University Alliances program provides hands-on training in
+                                SAP technology to prepare students for the intelligent enterprise and experience
+                                economy.</p>
+                        </div>
+                    </div>
+                </div>
 
+            </div>
+    
+    </section>
+    </div>
 
-		<br>
+    <!-- Hebrew Version -->
+    <div id="hebrew-version" class="w-full hidden px-4 sm:px-6 lg:px-8" dir="rtl">
+        <div
+            class="bg-[#231E39] rounded-lg shadow-xl text-[#B3B8CD] pt-8 relative w-[450px] max-w-full text-center mb-4 mx-auto">
+            <a href="#" onclick="toggleLanguage()"
+                class="bg-[#FEBB0B] text-[#231E39] rounded px-2 py-1 text-sm font-bold absolute top-8 left-8">English</a>
 
+            <img class="border border-[#03BFCB] rounded-full p-2 w-1/2 mx-auto" src="img\1648344009789.jpg"
+                alt="user" />
+            <h3 class="my-3">רואי רדלר</h3>
 
+            <table class="border-collapse mx-auto max-w-full w-[500px]">
+                <tr>
+                    <td class="border border-transparent p-3"><strong>ת.ז סטודנט:</strong></td>
+                    <td class="border border-transparent p-3">13******3</td>
+                </tr>
+                <tr>
+                    <td class="border border-transparent p-3"><strong>מחלקה:</strong></td>
+                    <td class="border border-transparent p-3">220113003</td>
+                </tr>
+                <tr>
+                    <td class="border border-transparent p-3"><strong>סטטוס:</strong></td>
+                    <td class="border border-transparent p-3">
+                        זכאי לתואר
+                        <img class="inline w-[4%]"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/2048px-Eo_circle_green_checkmark.svg.png">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border border-transparent p-3"><strong>תאריך תחילת הזכאות:</strong></td>
+                    <td class="border border-transparent p-3">15/12/2022</td>
+                </tr>
+                <tr>
+                    <td class="border border-transparent p-3"><strong>תאריך פקיעת הזכאות:</strong></td>
+                    <td class="border border-transparent p-3">אין</td>
+                </tr>
+            </table>
+            <div class="mt-4 mb-4">
+                <div id="idLinkedInIcon"
+                    class="bg-[#0066AA] hover:bg-[#0066dd] rounded-md text-white cursor-pointer inline-block font-bold text-4xl h-10 w-10 mt-px text-center"
+                    onclick="window.open('https://www.linkedin.com/in/roei-redler/');" title="Roei Redler Linkedin">in
+                </div>
+            </div>
+        </div>
 
-	</div>
-	<!-- This is a comment in HTML -->
+        <div
+            class="bg-opacity-40 bg-[#474ba0] rounded-lg shadow-xl text-[#B3B8CD] pt-8 relative w-[450px] max-w-full text-center mb-4 mx-auto">
+            <table class="border-collapse w-full max-w-[800px] mx-auto border-0">
+                <tr>
+                    <th class="w-[30%] border-r border-b border-[#ddd] p-3">הכשרה אקדמאית</th>
+                    <td class="w-[2%] border-b border-[#ddd] p-3">:</td>
+                    <td class="border-b border-[#ddd] p-3">B.A</td>
+                </tr>
+                <tr>
+                    <th class="w-[30%] border-r border-b border-[#ddd] p-3">נושא</th>
+                    <td class="w-[2%] border-b border-[#ddd] p-3">:</td>
+                    <td class="border-b border-[#ddd] p-3">מנהל עסקים בהתמחות מערכות מידע</td>
+                </tr>
+                <tr>
+                    <th class="w-[30%] border-r border-b border-[#ddd] p-3">שנים אקדמיות</th>
+                    <td class="w-[2%] border-b border-[#ddd] p-3">:</td>
+                    <td class="border-b border-[#ddd] p-3">2019-2022</td>
+                </tr>
+                <tr>
+                    <th class="w-[30%] border-r border-b border-[#ddd] p-3">מוסד אקדמי</th>
+                    <td class="w-[2%] border-b border-[#ddd] p-3">:</td>
+                    <td class="border-b border-[#ddd] p-3">
+                        <img class="w-1/4 align-middle mr-3 inline"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Ono_Academic_College.png/338px-Ono_Academic_College.png">
+                        הקריה האקדמית אונו
+                    </td>
+                </tr>
+                <tr>
+                    <th class="w-[30%] border-r p-3">ציון</th>
+                    <td class="w-[2%] p-3">:</td>
+                    <td class="p-3">87</td>
+                </tr>
+            </table>
+        </div>
 
-	<section class="gallery-block cards-gallery">
-		<div class="container">
-			<div class="heading">
-				<h2>Academic Certificates</h2>
-			</div>
-			<div class="row">
-				<div class="col-md-6 col-lg-4">
-					<div class="card border-0 transform-on-hover">
-						<a class="lightbox" href="img\1671134101137.png">
-							<img src="img\113.png" alt="Card Image" class="card-img-top">
-						</a>
-						<div class="card-body">
-							<h6><a href="#">Bachelor's Degree Qualification</a></h6>
-							<p class="text-muted card-text">Official document that certifies that a student has met all
-								the requirements necessary to obtain a specific academic degree from a university or
-								college.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4">
-					<div class="card border-0 transform-on-hover">
-						<a class="lightbox" href="img\Scan2023-06-05_183206.jpg">
-							<img src="img\6.jpg"
-								alt="Card Image" class="card-img-top">
-						</a>
-						<div class="card-body">
-							<h6><a href="#">Bachelor's degree</a></h6>
-							<p class="text-muted card-text">An official certificate awarded at the end of the study period at an academic institution</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4">
-					<div class="card border-0 transform-on-hover">
-						<a class="lightbox" href="img\Scan2023-06-05_183911.jpg">
-							<img src="img\8.jpg"
-								alt="Card Image" class="card-img-top">
-						</a>
-						<div class="card-body">
-							<h6><a href="#">Systems analyst certificate</a></h6>
-							<p class="text-muted card-text">A certificate attesting to the official approval of the Bureau of Systems Analysts in Israel as certified in information systems analysis</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4">
-					<div class="card border-0 transform-on-hover">
-						<a class="lightbox" href="img\Scan2023-06-05_183542.jpg">
-							<img src="img\7.jpg"
-								alt="Card Image" class="card-img-top">
-						</a>
-						<div class="card-body">
-							<h6><a href="#">SAP certification</a></h6>
-							<p class="text-muted card-text">SAP University Alliances program provides hands-on training in SAP technology to prepare students for the intelligent enterprise and experience economy.</p>
-						</div>
-					</div>
-				</div>
+        <section class="py-8 sm:py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-8 sm:mb-12">
+                    <h2 class="font-bold text-lg sm:text-xl text-[#aab3bc]">תעודות אקדמיות</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Certificate 1 -->
+                    <div class="card border-0 transform hover:translate-y-[-10px] hover:scale-102 hover:shadow-lg transition duration-400">
+                        <img src="img\113.png" alt="Card Image" class="card-img-top shadow cursor-pointer" 
+                             onclick="openImageViewer('img\\1671134101137.png')">
+                        <div class="card-body text-center">
+                            <h6 class="text-base font-bold"><a href="#" class="text-[#212529] hover:no-underline">אישור זכאות לתואר</a></h6>
+                            <p class="text-muted text-sm">מסמך רשמי המאשר כי סטודנט עמד בכל הדרישות הנדרשות לקבלת תואר אקדמי ספציפי מאוניברסיטה או מכללה.</p>
+                        </div>
+                    </div>
+        
+                    <!-- Certificate 2 -->
+                    <div class="card border-0 transform hover:translate-y-[-10px] hover:scale-102 hover:shadow-lg transition duration-400">
+                        <img src="img\6.jpg" alt="Card Image" class="card-img-top shadow cursor-pointer" 
+                             onclick="openImageViewer('img\\Scan2023-06-05_183206.jpg')">
+                        <div class="card-body text-center">
+                            <h6 class="text-base font-bold"><a href="#" class="text-[#212529] hover:no-underline">תעודת תואר ראשון</a></h6>
+                            <p class="text-muted text-sm">תעודה רשמית המוענקת בסוף תקופת הלימודים במוסד אקדמי</p>
+                        </div>
+                    </div>
+        
+                    <!-- Certificate 3 -->
+                    <div class="card border-0 transform hover:translate-y-[-10px] hover:scale-102 hover:shadow-lg transition duration-400">
+                        <img src="img\8.jpg" alt="Card Image" class="card-img-top shadow cursor-pointer" 
+                             onclick="openImageViewer('img\\Scan2023-06-05_183911.jpg')">
+                        <div class="card-body text-center">
+                            <h6 class="text-base font-bold"><a href="#" class="text-[#212529] hover:no-underline">תעודת מנתח מערכות</a></h6>
+                            <p class="text-muted text-sm">תעודה המעידה על אישור רשמי מלשכת מנתחי המערכות בישראל כמוסמך בניתוח מערכות מידע</p>
+                        </div>
+                    </div>
+        
+                    <!-- Certificate 4 -->
+                    <div class="card border-0 transform hover:translate-y-[-10px] hover:scale-102 hover:shadow-lg transition duration-400">
+                        <img src="img\7.jpg" alt="Card Image" class="card-img-top shadow cursor-pointer" 
+                             onclick="openImageViewer('img\\Scan2023-06-05_183542.jpg')">
+                        <div class="card-body text-center">
+                            <h6 class="text-base font-bold"><a href="#" class="text-[#212529] hover:no-underline">תעודה הסמכה SAP</a></h6>
+                            <p class="text-muted text-sm">תוכנית SAP University Alliances מספקת הכשרה מעשית בטכנולוגיית SAP כדי להכין את הסטודנטים לכלכלת הארגון והחוויה החכמה.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
-			</div>
-		</div>
-	</section>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-	<script>
-		baguetteBox.run('.cards-gallery', { animation: 'slideIn' });
-	</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script>
+        // Language toggle function
+        function toggleLanguage() {
+            const englishVersion = document.getElementById('english-version');
+            const hebrewVersion = document.getElementById('hebrew-version');
+
+            if (englishVersion.classList.contains('hidden')) {
+                englishVersion.classList.remove('hidden');
+                hebrewVersion.classList.add('hidden');
+            } else {
+                hebrewVersion.classList.remove('hidden');
+                englishVersion.classList.add('hidden');
+            }
+        }
+
+        // Image viewer functions
+        function openImageViewer(imageSrc) {
+            const viewer = document.getElementById('imageViewer');
+            const viewerImage = document.getElementById('viewerImage');
+            viewerImage.src = imageSrc;
+            viewer.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when viewer is open
+        }
+
+        function closeImageViewer() {
+            const viewer = document.getElementById('imageViewer');
+            viewer.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Close viewer when clicking outside the image
+        document.getElementById('imageViewer').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeImageViewer();
+            }
+        });
+
+        // Close viewer with Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeImageViewer();
+            }
+        });
+    </script>
 </body>
 
 </html>
