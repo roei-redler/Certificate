@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bachelor's degree qualification</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" rel="stylesheet">
+    <title>Academic Portfolio - Roei Redler</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Custom styles for the image viewer */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
         .image-viewer {
             display: none;
             position: fixed;
@@ -22,7 +21,6 @@
             background: rgba(0, 0, 0, 0.9);
             z-index: 1000;
         }
-
         .image-viewer img {
             max-width: 90%;
             max-height: 90vh;
@@ -32,7 +30,6 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
-
         .close-btn {
             position: absolute;
             top: 20px;
@@ -53,332 +50,350 @@
     </style>
 </head>
 
-<body class="bg-[#28223F] font-['Montserrat'] flex items-center justify-center flex-col min-h-screen m-0">
+<body class="bg-gradient-to-br from-slate-900 to-slate-800 text-gray-100 min-h-screen">
     <!-- Image Viewer -->
     <div id="imageViewer" class="image-viewer">
         <div class="close-btn" onclick="closeImageViewer()">×</div>
         <img id="viewerImage" src="" alt="Enlarged image">
     </div>
+
+    <!-- Language Switcher -->
+    <div class="fixed top-4 right-4 z-50">
+        <button onclick="toggleLanguage()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-full transition-all duration-300 shadow-lg">
+            <span id="lang-en">עברית</span>
+            <span id="lang-he" class="hidden">English</span>
+        </button>
+    </div>
+
     <!-- English Version -->
-    <div id="english-version" class="w-full px-4 sm:px-6 lg:px-8">
-        <div
-            class="bg-[#231E39] rounded-lg shadow-xl text-[#B3B8CD] pt-8 relative w-full max-w-[450px] text-center mb-4 mx-auto">
-            <a href="#" onclick="toggleLanguage()"
-                class="bg-[#FEBB0B] text-[#231E39] rounded px-2 py-1 text-sm font-bold absolute top-8 left-8">עברית</a>
-
-            <img class="border border-[#03BFCB] rounded-full p-2 w-48 sm:w-64 mx-auto" src="img\1648344009789.jpg"
-                alt="user" />
-            <h3 class="my-3 text-lg sm:text-xl">Roei Redler</h3>
-
-            <table class="border-collapse mx-auto max-w-full w-[500px]">
-                <tr>
-                    <td class="border border-transparent p-3"><strong>Student ID:</strong></td>
-                    <td class="border border-transparent p-3">3******13</td>
-                </tr>
-                <tr>
-                    <td class="border border-transparent p-3"><strong>Class:</strong></td>
-                    <td class="border border-transparent p-3">220113003</td>
-                </tr>
-                <tr>
-                    <td class="border border-transparent p-3"><strong>Status:</strong></td>
-                    <td class="border border-transparent p-3">
-                        Successfully graduated
-                        <img class="inline w-[4%]"
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/2048px-Eo_circle_green_checkmark.svg.png">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="border border-transparent p-3"><strong>Eligibility start date:</strong></td>
-                    <td class="border border-transparent p-3">15/12/2022</td>
-                </tr>
-                <tr>
-                    <td class="border border-transparent p-3"><strong>Eligibility expiration date:</strong></td>
-                    <td class="border border-transparent p-3">None</td>
-                </tr>
-            </table>
-            <div class="mt-4 mb-4">
-                <div id="idLinkedInIcon"
-                    class="bg-[#0066AA] hover:bg-[#0066dd] rounded-md text-white cursor-pointer inline-block font-bold text-4xl h-10 w-10 mt-px text-center"
-                    onclick="window.open('https://www.linkedin.com/in/roei-redler/');" title="Roei Redler Linkedin">in
+    <div id="english-version" class="container mx-auto px-4 py-8">
+        <!-- Profile Section -->
+        <div class="max-w-4xl mx-auto mb-12">
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-32 h-32 md:w-40 md:h-40">
+                        <img src="img\1648344009789.jpg" alt="Roei Redler" 
+                             class="w-full h-full object-cover rounded-full border-4 border-indigo-500 shadow-xl">
+                    </div>
+                    <div class="flex-1 text-center md:text-left">
+                        <h1 class="text-3xl md:text-4xl font-bold mb-2">Roei Redler</h1>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div class="space-y-2">
+                                <p class="text-gray-300"><span class="font-semibold">Student ID:</span> 3******13</p>
+                                <p class="text-gray-300"><span class="font-semibold">Department:</span> 220113003</p>
+                            </div>
+                            <div class="space-y-2">
+                                <p class="text-gray-300"><span class="font-semibold">Status:</span> 
+                                    <span class="inline-flex items-center">
+                                        Successfully graduated
+                                        <svg class="w-5 h-5 text-green-500 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </span>
+                                </p>
+                                <p class="text-gray-300"><span class="font-semibold">Graduation Date:</span> 15/12/2022</p>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <a href="https://www.linkedin.com/in/roei-redler/" target="_blank" 
+                               class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-300">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                                LinkedIn Profile
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div
-            class="bg-opacity-40 bg-[#474ba0] rounded-lg shadow-xl text-[#B3B8CD] pt-8 relative w-full max-w-[450px] text-center mb-4 mx-auto p-4">
-            <table class="border-collapse w-full max-w-[800px] mx-auto border-0">
-                <tr>
-                    <th class="w-[30%] border-r border-b border-[#ddd] p-3">Academic Qualification</th>
-                    <td class="w-[2%] border-b border-[#ddd] p-3">:</td>
-                    <td class="border-b border-[#ddd] p-3">B.A</td>
-                </tr>
-                <tr>
-                    <th class="w-[30%] border-r border-b border-[#ddd] p-3">Title</th>
-                    <td class="w-[2%] border-b border-[#ddd] p-3">:</td>
-                    <td class="border-b border-[#ddd] p-3">Business administration in information systems</td>
-                </tr>
-                <tr>
-                    <th class="w-[30%] border-r border-b border-[#ddd] p-3">Academic Years</th>
-                    <td class="w-[2%] border-b border-[#ddd] p-3">:</td>
-                    <td class="border-b border-[#ddd] p-3">2019-2022</td>
-                </tr>
-                <tr>
-                    <th class="w-[30%] border-r border-b border-[#ddd] p-3">Academic institution</th>
-                    <td class="w-[2%] border-b border-[#ddd] p-3">:</td>
-                    <td class="border-b border-[#ddd] p-3">
-                        <img class="w-1/4 align-middle mr-3 inline"
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Ono_Academic_College.png/338px-Ono_Academic_College.png">
-                        Ono Academic College
-                    </td>
-                </tr>
-                <tr>
-                    <th class="w-[30%] border-r p-3">Grade</th>
-                    <td class="w-[2%] p-3">:</td>
-                    <td class="p-3">87</td>
-                </tr>
-            </table>
+        <!-- Academic Details -->
+        <div class="max-w-4xl mx-auto mb-12">
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl">
+                <h2 class="text-2xl font-bold mb-6 text-indigo-300">Academic Information</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <div class="space-y-4">
+                            <div>
+                                <h3 class="text-gray-400 text-sm">Academic Qualification</h3>
+                                <p class="text-xl font-medium">B.A</p>
+                            </div>
+                            <div>
+                                <h3 class="text-gray-400 text-sm">Title</h3>
+                                <p class="text-xl font-medium">Business Administration in Information Systems</p>
+                            </div>
+                            <div>
+                                <h3 class="text-gray-400 text-sm">Academic Years</h3>
+                                <p class="text-xl font-medium">2019-2022</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="space-y-4">
+                            <div>
+                                <h3 class="text-gray-400 text-sm">Academic Institution</h3>
+                                <div class="flex items-center gap-3">
+                                    <img class="w-16 h-16 object-contain" 
+                                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Ono_Academic_College.png/338px-Ono_Academic_College.png">
+                                    <p class="text-xl font-medium">Ono Academic College</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-gray-400 text-sm">Final Grade</h3>
+                                <p class="text-xl font-medium">87</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <section class="py-8 sm:py-16">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-8 sm:mb-12">
-                    <h2 class="font-bold text-lg sm:text-xl text-[#aab3bc]">Academic Certificates</h2>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Certificate 1 -->
-                    <div
-                        class="card border-0 transform hover:translate-y-[-10px] hover:scale-102 hover:shadow-lg transition duration-400">
-                        <img src="img\113.png" alt="Card Image" class="card-img-top shadow cursor-pointer"
-                            onclick="openImageViewer('img\\1671134101137.png')">
-                        <div class="card-body text-center">
-                            <h6 class="text-base font-bold"><a href="#"
-                                    class="text-[#212529] hover:no-underline">Bachelor's Degree Qualification</a></h6>
-                            <p class="text-muted text-sm">Official document that certifies that a student has met all
-                                requirements.</p>
-                        </div>
+        <!-- Certificates -->
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-2xl font-bold mb-8 text-center text-indigo-300">Academic Certificates</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Certificate Cards -->
+                <div class="group bg-white/10 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="img\113.png" alt="Bachelor's Degree Qualification" 
+                             class="w-full h-full object-cover cursor-pointer transition-transform duration-300 group-hover:scale-110"
+                             onclick="openImageViewer('img\\1671134101137.png')">
                     </div>
-
-                    <!-- Certificate 2 -->
-                    <div
-                        class="card border-0 transform hover:translate-y-[-10px] hover:scale-102 hover:shadow-lg transition duration-400">
-                        <img src="img\6.jpg" alt="Card Image" class="card-img-top shadow cursor-pointer"
-                            onclick="openImageViewer('img\\Scan2023-06-05_183206.jpg')">
-                        <div class="card-body text-center">
-                            <h6 class="text-base font-bold"><a href="#"
-                                    class="text-[#212529] hover:no-underline">Bachelor's degree</a></h6>
-                            <p class="text-muted text-sm">An official certificate awarded at the end of the study period
-                                at an academic institution</p>
-                        </div>
-                    </div>
-
-                    <!-- Certificate 3 -->
-                    <div
-                        class="card border-0 transform hover:translate-y-[-10px] hover:scale-102 hover:shadow-lg transition duration-400">
-                        <img src="img\8.jpg" alt="Card Image" class="card-img-top shadow cursor-pointer"
-                            onclick="openImageViewer('img\\Scan2023-06-05_183911.jpg')">
-                        <div class="card-body text-center">
-                            <h6 class="text-base font-bold"><a href="#"
-                                    class="text-[#212529] hover:no-underline">Systems analyst certificate</a></h6>
-                            <p class="text-muted text-sm">A certificate attesting to the official approval of the Bureau
-                                of Systems Analysts in Israel as certified in information systems analysis</p>
-                        </div>
-                    </div>
-
-                    <!-- Certificate 4 -->
-                    <div
-                        class="card border-0 transform hover:translate-y-[-10px] hover:scale-102 hover:shadow-lg transition duration-400">
-                        <img src="img\7.jpg" alt="Card Image" class="card-img-top shadow cursor-pointer"
-                            onclick="openImageViewer('img\\Scan2023-06-05_183542.jpg')">
-                        <div class="card-body text-center">
-                            <h6 class="text-base font-bold"><a href="#" class="text-[#212529] hover:no-underline">SAP
-                                    certification</a></h6>
-                            <p class="text-muted text-sm">SAP University Alliances program provides hands-on training in
-                                SAP technology to prepare students for the intelligent enterprise and experience
-                                economy.</p>
-                        </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">Bachelor's Degree Qualification</h3>
+                        <p class="text-gray-400 text-sm">Official document certifying completion of all degree requirements.</p>
                     </div>
                 </div>
 
+                <div class="group bg-white/10 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="img\6.jpg" alt="Bachelor's Degree" 
+                             class="w-full h-full object-cover cursor-pointer transition-transform duration-300 group-hover:scale-110"
+                             onclick="openImageViewer('img\\Scan2023-06-05_183206.jpg')">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">Bachelor's Degree</h3>
+                        <p class="text-gray-400 text-sm">Official academic degree certificate from the institution.</p>
+                    </div>
+                </div>
+
+                <div class="group bg-white/10 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="img\8.jpg" alt="Systems Analyst Certificate" 
+                             class="w-full h-full object-cover cursor-pointer transition-transform duration-300 group-hover:scale-110"
+                             onclick="openImageViewer('img\\Scan2023-06-05_183911.jpg')">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">Systems Analyst Certificate</h3>
+                        <p class="text-gray-400 text-sm">Professional certification in systems analysis.</p>
+                    </div>
+                </div>
+
+                <div class="group bg-white/10 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="img\7.jpg" alt="SAP Certification" 
+                             class="w-full h-full object-cover cursor-pointer transition-transform duration-300 group-hover:scale-110"
+                             onclick="openImageViewer('img\\Scan2023-06-05_183542.jpg')">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">SAP Certification</h3>
+                        <p class="text-gray-400 text-sm">Specialized training in SAP technologies and enterprise systems.</p>
+                    </div>
+                </div>
             </div>
-    
-    </section>
+        </div>
     </div>
 
     <!-- Hebrew Version -->
-    <div id="hebrew-version" class="w-full hidden px-4 sm:px-6 lg:px-8" dir="rtl">
-        <div
-            class="bg-[#231E39] rounded-lg shadow-xl text-[#B3B8CD] pt-8 relative w-[450px] max-w-full text-center mb-4 mx-auto">
-            <a href="#" onclick="toggleLanguage()"
-                class="bg-[#FEBB0B] text-[#231E39] rounded px-2 py-1 text-sm font-bold absolute top-8 left-8">English</a>
-
-            <img class="border border-[#03BFCB] rounded-full p-2 w-1/2 mx-auto" src="img\1648344009789.jpg"
-                alt="user" />
-            <h3 class="my-3">רואי רדלר</h3>
-
-            <table class="border-collapse mx-auto max-w-full w-[500px]">
-                <tr>
-                    <td class="border border-transparent p-3"><strong>ת.ז סטודנט:</strong></td>
-                    <td class="border border-transparent p-3">13******3</td>
-                </tr>
-                <tr>
-                    <td class="border border-transparent p-3"><strong>מחלקה:</strong></td>
-                    <td class="border border-transparent p-3">220113003</td>
-                </tr>
-                <tr>
-                    <td class="border border-transparent p-3"><strong>סטטוס:</strong></td>
-                    <td class="border border-transparent p-3">
-                        זכאי לתואר
-                        <img class="inline w-[4%]"
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/2048px-Eo_circle_green_checkmark.svg.png">
-                    </td>
-                </tr>
-                <tr>
-                    <td class="border border-transparent p-3"><strong>תאריך תחילת הזכאות:</strong></td>
-                    <td class="border border-transparent p-3">15/12/2022</td>
-                </tr>
-                <tr>
-                    <td class="border border-transparent p-3"><strong>תאריך פקיעת הזכאות:</strong></td>
-                    <td class="border border-transparent p-3">אין</td>
-                </tr>
-            </table>
-            <div class="mt-4 mb-4">
-                <div id="idLinkedInIcon"
-                    class="bg-[#0066AA] hover:bg-[#0066dd] rounded-md text-white cursor-pointer inline-block font-bold text-4xl h-10 w-10 mt-px text-center"
-                    onclick="window.open('https://www.linkedin.com/in/roei-redler/');" title="Roei Redler Linkedin">in
+    <div id="hebrew-version" class="container mx-auto px-4 py-8 hidden" dir="rtl">
+        <!-- Same structure as English version but with Hebrew content -->
+        <!-- Profile Section -->
+        <div class="max-w-4xl mx-auto mb-12">
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-32 h-32 md:w-40 md:h-40">
+                        <img src="img\1648344009789.jpg" alt="רואי רדלר" 
+                             class="w-full h-full object-cover rounded-full border-4 border-indigo-500 shadow-xl">
+                    </div>
+                    <div class="flex-1 text-center md:text-right">
+                        <h1 class="text-3xl md:text-4xl font-bold mb-2">רואי רדלר</h1>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div class="space-y-2">
+                                <p class="text-gray-300"><span class="font-semibold">ת.ז סטודנט:</span> 13******3</p>
+                                <p class="text-gray-300"><span class="font-semibold">מחלקה:</span> 220113003</p>
+                            </div>
+                            <div class="space-y-2">
+                                <p class="text-gray-300"><span class="font-semibold">סטטוס:</span> 
+                                    <span class="inline-flex items-center">
+                                        זכאי לתואר
+                                        <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </span>
+                                </p>
+                                <p class="text-gray-300"><span class="font-semibold">תאריך זכאות:</span> 15/12/2022</p>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <a href="https://www.linkedin.com/in/roei-redler/" target="_blank" 
+                               class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-300">
+                                <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                                פרופיל LinkedIn
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div
-            class="bg-opacity-40 bg-[#474ba0] rounded-lg shadow-xl text-[#B3B8CD] pt-8 relative w-[450px] max-w-full text-center mb-4 mx-auto">
-            <table class="border-collapse w-full max-w-[800px] mx-auto border-0">
-                <tr>
-                    <th class="w-[30%] border-r border-b border-[#ddd] p-3">הכשרה אקדמאית</th>
-                    <td class="w-[2%] border-b border-[#ddd] p-3">:</td>
-                    <td class="border-b border-[#ddd] p-3">B.A</td>
-                </tr>
-                <tr>
-                    <th class="w-[30%] border-r border-b border-[#ddd] p-3">נושא</th>
-                    <td class="w-[2%] border-b border-[#ddd] p-3">:</td>
-                    <td class="border-b border-[#ddd] p-3">מנהל עסקים בהתמחות מערכות מידע</td>
-                </tr>
-                <tr>
-                    <th class="w-[30%] border-r border-b border-[#ddd] p-3">שנים אקדמיות</th>
-                    <td class="w-[2%] border-b border-[#ddd] p-3">:</td>
-                    <td class="border-b border-[#ddd] p-3">2019-2022</td>
-                </tr>
-                <tr>
-                    <th class="w-[30%] border-r border-b border-[#ddd] p-3">מוסד אקדמי</th>
-                    <td class="w-[2%] border-b border-[#ddd] p-3">:</td>
-                    <td class="border-b border-[#ddd] p-3">
-                        <img class="w-1/4 align-middle mr-3 inline"
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Ono_Academic_College.png/338px-Ono_Academic_College.png">
-                        הקריה האקדמית אונו
-                    </td>
-                </tr>
-                <tr>
-                    <th class="w-[30%] border-r p-3">ציון</th>
-                    <td class="w-[2%] p-3">:</td>
-                    <td class="p-3">87</td>
-                </tr>
-            </table>
+        <!-- Academic Details - Hebrew -->
+        <div class="max-w-4xl mx-auto mb-12">
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl">
+                <h2 class="text-2xl font-bold mb-6 text-indigo-300">מידע אקדמי</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <div class="space-y-4">
+                            <div>
+                                <h3 class="text-gray-400 text-sm">הכשרה אקדמאית</h3>
+                                <p class="text-xl font-medium">B.A</p>
+                            </div>
+                            <div>
+                                <h3 class="text-gray-400 text-sm">נושא</h3>
+                                <p class="text-xl font-medium">מנהל עסקים בהתמחות מערכות מידע</p>
+                            </div>
+                            <div>
+                                <h3 class="text-gray-400 text-sm">שנים אקדמיות</h3>
+                                <p class="text-xl font-medium">2019-2022</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="space-y-4">
+                            <div>
+                                <h3 class="text-gray-400 text-sm">מוסד אקדמי</h3>
+                                <div class="flex items-center gap-3">
+                                    <p class="text-xl font-medium">הקריה האקדמית אונו</p>
+                                    <img class="w-16 h-16 object-contain" 
+                                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Ono_Academic_College.png/338px-Ono_Academic_College.png">
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-gray-400 text-sm">ציון</h3>
+                                <p class="text-xl font-medium">87</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <section class="py-8 sm:py-16">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-8 sm:mb-12">
-                    <h2 class="font-bold text-lg sm:text-xl text-[#aab3bc]">תעודות אקדמיות</h2>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Certificate 1 -->
-                    <div class="card border-0 transform hover:translate-y-[-10px] hover:scale-102 hover:shadow-lg transition duration-400">
-                        <img src="img\113.png" alt="Card Image" class="card-img-top shadow cursor-pointer" 
+        <!-- Certificates - Hebrew -->
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-2xl font-bold mb-8 text-center text-indigo-300">תעודות אקדמיות</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Certificate 1 -->
+                <div class="group bg-white/10 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="img\113.png" alt="אישור זכאות לתואר" 
+                             class="w-full h-full object-cover cursor-pointer transition-transform duration-300 group-hover:scale-110"
                              onclick="openImageViewer('img\\1671134101137.png')">
-                        <div class="card-body text-center">
-                            <h6 class="text-base font-bold"><a href="#" class="text-[#212529] hover:no-underline">אישור זכאות לתואר</a></h6>
-                            <p class="text-muted text-sm">מסמך רשמי המאשר כי סטודנט עמד בכל הדרישות הנדרשות לקבלת תואר אקדמי ספציפי מאוניברסיטה או מכללה.</p>
-                        </div>
                     </div>
-        
-                    <!-- Certificate 2 -->
-                    <div class="card border-0 transform hover:translate-y-[-10px] hover:scale-102 hover:shadow-lg transition duration-400">
-                        <img src="img\6.jpg" alt="Card Image" class="card-img-top shadow cursor-pointer" 
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">אישור זכאות לתואר</h3>
+                        <p class="text-gray-400 text-sm">מסמך רשמי המאשר כי סטודנט עמד בכל הדרישות הנדרשות לקבלת תואר אקדמי.</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="group bg-white/10 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="img\6.jpg" alt="תעודת תואר ראשון" 
+                             class="w-full h-full object-cover cursor-pointer transition-transform duration-300 group-hover:scale-110"
                              onclick="openImageViewer('img\\Scan2023-06-05_183206.jpg')">
-                        <div class="card-body text-center">
-                            <h6 class="text-base font-bold"><a href="#" class="text-[#212529] hover:no-underline">תעודת תואר ראשון</a></h6>
-                            <p class="text-muted text-sm">תעודה רשמית המוענקת בסוף תקופת הלימודים במוסד אקדמי</p>
-                        </div>
                     </div>
-        
-                    <!-- Certificate 3 -->
-                    <div class="card border-0 transform hover:translate-y-[-10px] hover:scale-102 hover:shadow-lg transition duration-400">
-                        <img src="img\8.jpg" alt="Card Image" class="card-img-top shadow cursor-pointer" 
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">תעודת תואר ראשון</h3>
+                        <p class="text-gray-400 text-sm">תעודה רשמית המוענקת בסוף תקופת הלימודים במוסד אקדמי.</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="group bg-white/10 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="img\8.jpg" alt="תעודת מנתח מערכות" 
+                             class="w-full h-full object-cover cursor-pointer transition-transform duration-300 group-hover:scale-110"
                              onclick="openImageViewer('img\\Scan2023-06-05_183911.jpg')">
-                        <div class="card-body text-center">
-                            <h6 class="text-base font-bold"><a href="#" class="text-[#212529] hover:no-underline">תעודת מנתח מערכות</a></h6>
-                            <p class="text-muted text-sm">תעודה המעידה על אישור רשמי מלשכת מנתחי המערכות בישראל כמוסמך בניתוח מערכות מידע</p>
-                        </div>
                     </div>
-        
-                    <!-- Certificate 4 -->
-                    <div class="card border-0 transform hover:translate-y-[-10px] hover:scale-102 hover:shadow-lg transition duration-400">
-                        <img src="img\7.jpg" alt="Card Image" class="card-img-top shadow cursor-pointer" 
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">תעודת מנתח מערכות</h3>
+                        <p class="text-gray-400 text-sm">תעודה המעידה על אישור רשמי מלשכת מנתחי המערכות בישראל.</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 4 -->
+                <div class="group bg-white/10 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="img\7.jpg" alt="תעודה הסמכה SAP" 
+                             class="w-full h-full object-cover cursor-pointer transition-transform duration-300 group-hover:scale-110"
                              onclick="openImageViewer('img\\Scan2023-06-05_183542.jpg')">
-                        <div class="card-body text-center">
-                            <h6 class="text-base font-bold"><a href="#" class="text-[#212529] hover:no-underline">תעודה הסמכה SAP</a></h6>
-                            <p class="text-muted text-sm">תוכנית SAP University Alliances מספקת הכשרה מעשית בטכנולוגיית SAP כדי להכין את הסטודנטים לכלכלת הארגון והחוויה החכמה.</p>
-                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">תעודה הסמכה SAP</h3>
+                        <p class="text-gray-400 text-sm">תוכנית SAP University Alliances מספקת הכשרה מעשית בטכנולוגיית SAP.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script>
-        // Language toggle function
         function toggleLanguage() {
             const englishVersion = document.getElementById('english-version');
             const hebrewVersion = document.getElementById('hebrew-version');
-
+            const langEn = document.getElementById('lang-en');
+            const langHe = document.getElementById('lang-he');
+            
             if (englishVersion.classList.contains('hidden')) {
                 englishVersion.classList.remove('hidden');
                 hebrewVersion.classList.add('hidden');
+                langEn.classList.remove('hidden');
+                langHe.classList.add('hidden');
             } else {
                 hebrewVersion.classList.remove('hidden');
                 englishVersion.classList.add('hidden');
+                langHe.classList.remove('hidden');
+                langEn.classList.add('hidden');
             }
         }
 
-        // Image viewer functions
         function openImageViewer(imageSrc) {
             const viewer = document.getElementById('imageViewer');
             const viewerImage = document.getElementById('viewerImage');
             viewerImage.src = imageSrc;
             viewer.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent scrolling when viewer is open
+            document.body.style.overflow = 'hidden';
         }
 
         function closeImageViewer() {
             const viewer = document.getElementById('imageViewer');
             viewer.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            document.body.style.overflow = 'auto';
         }
 
-        // Close viewer when clicking outside the image
-        document.getElementById('imageViewer').addEventListener('click', function (e) {
+        document.getElementById('imageViewer').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeImageViewer();
             }
         });
 
-        // Close viewer with Escape key
-        document.addEventListener('keydown', function (e) {
+        document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeImageViewer();
             }
         });
     </script>
 </body>
-
 </html>
