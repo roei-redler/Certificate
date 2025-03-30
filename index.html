@@ -29,6 +29,8 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
         .close-btn {
             position: absolute;
@@ -47,6 +49,22 @@
             font-weight: bold;
             z-index: 1001;
         }
+        .loader {
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 5px solid #fff;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
     </style>
 </head>
 
@@ -54,6 +72,7 @@
     <!-- Image Viewer -->
     <div id="imageViewer" class="image-viewer">
         <div class="close-btn" onclick="closeImageViewer()">×</div>
+        <div id="imageLoader" class="loader"></div>
         <img id="viewerImage" src="" alt="Enlarged image">
     </div>
 
@@ -372,9 +391,28 @@
         function openImageViewer(imageSrc) {
             const viewer = document.getElementById('imageViewer');
             const viewerImage = document.getElementById('viewerImage');
-            viewerImage.src = imageSrc;
+            const loader = document.getElementById('imageLoader');
+            
+            // Show the viewer and loader
             viewer.style.display = 'block';
+            loader.style.display = 'block';
+            viewerImage.style.opacity = '0';
             document.body.style.overflow = 'hidden';
+            
+            // Set image source
+            viewerImage.src = imageSrc;
+            
+            // Hide loader and show image when loaded
+            viewerImage.onload = function() {
+                loader.style.display = 'none';
+                viewerImage.style.opacity = '1';
+            };
+            
+            // Handle potential errors
+            viewerImage.onerror = function() {
+                loader.style.display = 'none';
+                // Could add an error message here
+            };
         }
 
         function closeImageViewer() {
